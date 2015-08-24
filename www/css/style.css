@@ -6,17 +6,63 @@
 .deactive{
     display: none;
 }
-
+.activity-content{
+    &.button{
+        text-align: right;
+    }
+}
+.col-right{
+    text-align: right;
+    transition: 0.09s all linear;
+}
+.footer-tab{
+    margin-left: -5px;
+}
 .list .item.item-accordion {
-  line-height: 38px;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.09s all linear;
+    text-align: left!important;
+    margin: 0 auto;
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.1s all linear;
 }
 .list .item.item-accordion.ng-hide {
-  line-height: 0px;
+    line-height: 0px;
+}
+.list .item.item-accordion .button{
+    transition: 0.1s all linear;
+}
+.list .item.item-accordion.ng-hide .button{
+    opacity: 0;
 }
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
-  display: block !important;
+    display: block !important;
+}
+.profile{
+    position: relative;
+    text-align: center;
+}
+.profile img{
+    border-radius: 100px;
+}
+.level{
+    float: right;
+    background-color: #444444;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.level h1{
+    color:#ffc900;
+    font-size: 30px;
+}
+.level h2{
+    color:#ffc900;
+    font-size: 25px;
+    line-height: 48px;
+}
+.category-list{
+    text-align: center;
 }
