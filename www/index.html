@@ -23,12 +23,42 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="mainController">
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">Guasca Rugby</h1>
       </ion-header-bar>
       <ion-content>
+
+
+        <button class="button button-full button-positive"  ng-class="{deactive:cardActive}" ng-click="login()">
+          Login
+        </button>
+        <div class="user-view deactive" ng-class="{deactive:!cardActive}">
+        <div class="list card">
+          <div class="item item-avatar">
+            <img src="{{profilePicture}}">
+            <h2>Jeff Ramos</h2>
+            <p>Scrum Half</p>
+          </div>
+        <div class="list list-inset">
+
+        <div ng-repeat="cat in categories">
+                <ion-item class="item-stable"
+                            ng-click="toggleGroup(cat)"
+                            ng-class="{active: isGroupShown(cat)}">
+                      <i class="icon" ng-class="isGroupShown(cat) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    {{cat.label}}
+                  </ion-item>
+                  <ion-item class="item-accordion"
+                            ng-repeat="activity in cat.activities"
+                            ng-show="isGroupShown(cat)">
+                    {{activity}}
+                  </ion-item>
+                </div>
+        </div>
+        </div>
       </ion-content>
-    </ion-pane>
+    </ion-pane><div id="fb-root"></div>
   </body>
 </html>
